@@ -13,9 +13,13 @@
     <item name="android:textColor">#C71B1B</item>
 </style>
 
+    <style name="url">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#2196F3</item>
+    </style>
     <style name="Text">
         <item name="android:textSize">14sp</item>
-
+        <item name="android:textStyle">bold</item>
     </style>
 
 

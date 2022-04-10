@@ -15,6 +15,15 @@ data class articles(
     val description: String?,
 
     @SerializedName("urlToImage")
-    val urlToImage: String?
+    val urlToImage: String?,
+
+    @SerializedName("url")
+    val url: String?,
+
+    @SerializedName("content")
+    val content: String? ,
+
+    @SerializedName("author")
+    val author: String?
 
 )

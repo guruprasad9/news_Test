@@ -4,7 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/News_TEST/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/News_TEST/app/src/main/res/layout/main_activity.xml" value="0.22916666666666666" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/News_TEST/app/src/main/res/layout/activity_second.xml" value="0.264" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/News_TEST/app/src/main/res/layout/activity_splash.xml" value="0.1621376811594203" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/News_TEST/app/src/main/res/layout/items_news.xml" value="0.1621376811594203" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/News_TEST/app/src/main/res/layout/main_activity.xml" value="0.11740890688259109" />
       </map>
     </option>
   </component>

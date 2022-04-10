@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme"
       >
         <activity
-            android:name=".view.activity.SecondActivity"
+            android:name=".view.activity.DetailsActivity"
             android:exported="false" />
         <activity android:name=".view.activity.MainActivity"></activity>
         <activity

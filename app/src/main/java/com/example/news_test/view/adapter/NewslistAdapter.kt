@@ -10,11 +10,11 @@ import com.example.news_test.R
 import com.example.news_test.model.articles
 import com.example.news_test.utils.getprogressdrawble
 import com.example.news_test.utils.loadimage
-import com.example.news_test.view.activity.SecondActivity
+import com.example.news_test.view.activity.DetailsActivity
 import kotlinx.android.synthetic.main.items_news.view.*
 
 class NewslistAdapter(var news: ArrayList<articles>) :
-    RecyclerView.Adapter<NewslistAdapter.CountryViewholder>() {
+    RecyclerView.Adapter<NewslistAdapter.NewsViewholder>() {
 
 
     fun updatenews(newcountries: List<articles>){
@@ -30,10 +30,13 @@ class NewslistAdapter(var news: ArrayList<articles>) :
 //            event.invoke(getAdapterPosition(), getItemViewType())
 
 
-            val intent = Intent(it.context, SecondActivity::class.java).apply {
+            val intent = Intent(it.context, DetailsActivity::class.java).apply {
                 putExtra("title", news.get(position).title)
                 putExtra("description", news.get(position).description)
                 putExtra("urlToImage", news.get(position).urlToImage)
+                putExtra("url", news.get(position).url)
+                putExtra("content", news.get(position).content)
+                putExtra("author", news.get(position).author)
             }
             it.context.startActivity(intent)
 
@@ -44,18 +47,18 @@ class NewslistAdapter(var news: ArrayList<articles>) :
 
 
 
-    class CountryViewholder(view: View) : RecyclerView.ViewHolder(view) {
+    class NewsViewholder(view: View) : RecyclerView.ViewHolder(view) {
 
         private val imageview=view.imageView
-        private val countrynametext = view.name
-        private val contrycapital=view.capital
+        private val newsnametext = view.title
+        private val newsdesc=view.descriptiontext
         private val progressDrawable= getprogressdrawble(view.context)
 
-        fun bind(country: articles) {
+        fun bind(news: articles) {
 
-            countrynametext.text= country.title
-            contrycapital.text=country.description
-            imageview.loadimage(country.urlToImage,progressDrawable)
+            newsnametext.text= news.title
+            newsdesc.text=news.description
+            imageview.loadimage(news.urlToImage,progressDrawable)
 
         }
 
@@ -63,23 +66,18 @@ class NewslistAdapter(var news: ArrayList<articles>) :
 
 
 
-//    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
-//        CountryViewholder(
-//            LayoutInflater.from(parent.context).inflate(R.layout.item_countries, parent, false)
-//
-//        )
-override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CountryViewholder {
+
+override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewholder {
     val inflater = LayoutInflater.from(parent!!.getContext())
     val view = inflater.inflate(R.layout.items_news, parent, false)
-    return CountryViewholder(view).listen { pos, type ->
-//        val item = countries.get(pos).countryname
+    return NewsViewholder(view).listen { pos, type ->
         //TODO do other stuff here
     }
 }
 
     override fun getItemCount() = news.size
 
-    override fun onBindViewHolder(holder: CountryViewholder, position: Int) {
+    override fun onBindViewHolder(holder: NewsViewholder, position: Int) {
 
         holder.bind(news[position])
 

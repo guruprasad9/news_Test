@@ -6,7 +6,6 @@ import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.news_test.R
-import kotlinx.android.synthetic.main.activity_main.view.*
 
 fun getprogressdrawble(context: Context): CircularProgressDrawable {
     return CircularProgressDrawable(context).apply {
